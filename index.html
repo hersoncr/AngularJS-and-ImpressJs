@@ -237,11 +237,16 @@
         <div class="center" >
             <h1>Controllers</h1>            
         </div>
-        <p>It's the View Model. Main job is "Application Logic." All Controllers posses a $scope. They can inherit $scopes too.</p> 
+        <p>It's the View Model. Main job is "Application Logic." All Controllers posses a $scope. They can inherit $scopes too.<br> Intended purposes: 
+            <ul>
+                <li>To setup initial state of a $scope object and</li>
+                <li>Extend behavior to a $scope object</li>
+            </ul>
+        </p> 
     </div>
     <div class="step"  data-x="0" data-y="14000" data-z="2000"   data-rotate-y="90" data-scale="1">
         <div class="center" ng-controller="demoController">
-            <h1>Directives</h1>
+            <h1>Directives--extend HTML!</h1>
             <input type="text" ng-model="passage" placeholder="Enter Passage" />
             <input type="text" ng-show="passage" ng-model="search" placeholder="Enter Search criteria" />
             <div ng-show="verse"> <textarea>{{ verse.split('\n') | filter:search }}</textarea></div>
@@ -251,9 +256,18 @@
 
         </div>
     </div>
+    <div class="step"  data-x="0" data-y="14000" data-z="4000"   data-rotate-y="90" data-scale="1">
+        <div class="center" >
+            <ul>
+                <li>Built-in directives: ngRepeat, ngShow, ngModel, ngBind.</li>
+                <li>Custom directives: extend attribute, elements, comments or classes</li>
+            </ul>
+        </div>
+    </div>
+
     <div  class="step" data-x="0" data-y="14000" data-z="2000" data-rotate-y="180" data-scale="1" >
         <div class="center" >
-            <h1>$Scope</h1>            
+            <h1>$Scope--glue for VIEW and CONTROLLER</h1>            
         </div>
     </div>
     <div  class="step" data-x="0" data-y="14000" data-z="2000"  data-rotate-y="270" data-scale="1">
