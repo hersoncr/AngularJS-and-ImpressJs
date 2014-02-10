@@ -258,7 +258,7 @@
             <input type="text" ng-show="passage" ng-model="search" placeholder="Enter Search criteria" />
             <div ng-show="verse"> <textarea>{{ verse.split('\n') | filter:search }}</textarea></div>
 
-            <div ng-show="isLoading"><img size="100px" src="http://0-media-cdn.foolz.us/ffuuka/board/gd/image/1389/31/1389311265704.gif"/></div>
+            <div ng-show="isLoading"><img size="25px" src="http://0-media-cdn.foolz.us/ffuuka/board/gd/image/1389/31/1389311265704.gif"/></div>
             <input type="button" ng-show="passage" ng-click="showCode(passage)" value="Download and show verse" >  
 
         </div>
@@ -313,21 +313,29 @@
             <h1>Services</h1>  
             <tab-list-item>Keep data persistently during the app's lifetime</tab-list-item>
             <tab-list-item>They are singleton objects</tab-list-item>
-            <tab-list-item>Built-in: $http, ...</tab-list-item>
+            <tab-list-item>Built-in: $http, $q ...</tab-list-item>
             <tab-list-item>Custom: factory, service and provider</tab-list-item>
             *Ari Lerner, Ng-Book - the Complete Book On Angularjs.          
         </div>
     </div> 
     <div  class="step" data-x="0" data-y="18000" data-z="8000" data-scale="1" data-rotate-y="270" >
-        <div class="center" >
-            <h1>$http</h1> 
-            <tab-list-item>Facilitates communication with the remote HTTP servers</tab-list-item>
-            <tab-list-item>Automatic transformation of requests and responses</tab-list-item>        
+        <div class="center" ng-controller="httpController">
+            <div ng-hide="codeHolder">
+                <h1>$http</h1> 
+                <tab-list-item>Facilitates communication with the remote HTTP servers</tab-list-item>
+                <tab-list-item>Automatic transformation of requests and responses</tab-list-item>
+            </div> 
+            <button ng-click="showCode()">{{ toogle }} code</button>
+            <div ng-show="codeHolder"> <script src="https://gist.github.com/hersoncr/8923117.js"></script></div>      
         </div>
     </div>
-     <div  class="step" data-x="0" data-y="18000" data-z="2000" data-scale="1" data-rotate-y="270" >
-        <div class="center" >
-            <h1>Promises</h1>            
+     <div  class="step" data-x="0" data-y="18000" data-z="-8000" data-scale="1" data-rotate-y="270" >
+        <div class="center"  >
+            <h1>Promises</h1>
+            <tab-list-item>Resolve values in an asynchronous way</tab-list-item>
+            <tab-list-item>Solves the <i>callback</i> <span style="color:red">Hell</span></tab-list-item>
+            <tab-list-item>Resolve or reject</tab-list-item>
+            <tab-list-item>Chainable through <i>Then's</i> </tab-list-item>
         </div>
     </div>
 
@@ -706,12 +714,26 @@ app.controller('demoController',function($scope,$http){
           error(function(data, status, headers, config) {
             // called asynchronously if an error occurs
             // or server returns response with an error status.
-            $scope.htmlCode = data;
+            $scope.verse = data;
             $scope.isLoading = false;
           });
   }
 });
-
+app.controller('httpController',function($scope,$http){
+    $scope.codeHolder = false;
+    $scope.toogle = "Show";
+    $scope.showCode = function(){
+        $scope.codeHolder = !$scope.codeHolder;
+        if(!$scope.codeHolder)
+        {
+            $scope.toogle = "Show";
+        }else
+        {
+            $scope.toogle = "Hide";
+        }
+        
+  }
+});
 app.directive('tabListItem',function(){
      return {
         restrict: 'EA',
