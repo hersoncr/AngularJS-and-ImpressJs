@@ -230,19 +230,26 @@
      <div  class="step" data-x="0" data-y="14000" data-z="10000" data-scale="1" >
         <div class="center" >
             <h1>Modules</h1> 
-            <p>The foundational piece for internally organizing the code<br> into the different major foundational components.</p>           
+            <tab-list-item>Module API</tab-list-item>
+            <tab-list-item>Run and config blocks</tab-list-item> 
+            <tab-list-item>Asynchronous loading</tab-list-item>          
+        </div>
+    </div>
+    <div  class="step" data-x="0" data-y="14000" data-z="8000" data-rotate-y="180" data-scale="1" >
+        <div class="center" >
+            <h1>$scope <br/> The <i>glue</i> for the View and Controller</h1>     
+            <img src="glue.png" width="60%" height="60%"/>       
         </div>
     </div>
     <div  class="step" data-x="0" data-y="14000" data-z="2000"  data-rotate-y="0" data-scale="1">
         <div class="center" >
-            <h1>Controllers</h1>            
+            <h1><b>Controllers</b></h1>            
         </div>
-        <p>It's the View Model. Main job is "Application Logic." All Controllers posses a $scope. They can inherit $scopes too.<br> Intended purposes: 
-            <ul>
-                <li>To setup initial state of a $scope object and</li>
-                <li>Extend behavior to a $scope object</li>
-            </ul>
-        </p> 
+        <div sstyle="font-size:8px"> Augment the Angular Scope<br/>Intended purposes: 
+            <tab-list-item>To setup initial state of a $scope object and</tab-list-item>  
+            <tab-list-item>Extend behavior to a $scope object</tab-list-item>  
+        </div> 
+        <tab-list-item>Controller prototypical inheritance</tab-list-item>  
     </div>
     <div class="step"  data-x="0" data-y="14000" data-z="2000"   data-rotate-y="90" data-scale="1">
         <div class="center" ng-controller="demoController">
@@ -258,19 +265,20 @@
     </div>
     <div class="step"  data-x="0" data-y="14000" data-z="4000"   data-rotate-y="90" data-scale="1">
         <div class="center" >
-            <ul>
-                <li>Built-in directives: ngRepeat, ngShow, ngModel, ngBind.</li>
-                <li>Custom directives: extend attribute, elements, comments or classes</li>
-            </ul>
+            Built-in directives:
+                <tab-list-item>ngRepeat</tab-list-item>
+                <tab-list-item>ngShow</tab-list-item>
+                <tab-list-item>ngModel</tab-list-item>
+                <tab-list-item>ngBind</tab-list-item>
+            Custom directives: 
+                <tab-list-item>attribute</tab-list-item>
+                <tab-list-item>elements</tab-list-item>
+                <tab-list-item>comments</tab-list-item>
+                <tab-list-item>classes</tab-list-item>           
         </div>
     </div>
 
-    <div  class="step" data-x="0" data-y="14000" data-z="8000" data-rotate-y="180" data-scale="1" >
-        <div class="center" >
-            <h1>$scope <br/> The <i>glue</i> for the VIEW and CONTROLLER</h1>     
-            <img src="glue.png" width="60%" height="60%"/>       
-        </div>
-    </div>
+    
     <div  class="step" data-x="0" data-y="14000" data-z="2000"  data-rotate-y="270" data-scale="1">
         <div class="center" > 
             <h2><strong>Data-Binding</strong></h2>
@@ -279,17 +287,44 @@
             <p ng-show="yourName">Hello, <strong >{{yourName}}</strong>!</p>          
         </div>
     </div>
+     <div  class="step" data-x="0" data-y="18000" data-z="8000" data-scale="1" data-rotate-y="360" >
+        <div class="center" >
+            <h1>Expressions</h1>
+            <tab-list-item>Attribute Evaluation</tab-list-item><!--: evaluation of all properties are against the scope doing the evaluation, unlike in JavaScript where the expressions are evaluated against the global window.-->
+
+            <tab-list-item>Forgiving</tab-list-item><!--: expression evaluation is forgiving to undefined and null, unlike in JavaScript, where trying to evaluate undefined properties can generate ReferenceError or TypeError.-->
+
+            <tab-list-item>No Control Flow Statements</tab-list-item> <!--: you cannot do any of the following in angular expression: conditionals, loops, or throw. -->    
+            <br/>*http://docs.angularjs.org/guide/expression.        
+        </div>
+    </div>
     <div  class="step" data-x="0" data-y="18000" data-z="2000"  data-rotate-y="90" data-scale="1">
         <div class="center" >
-            <h1>filters</h1>            
+            <h1>Filters</h1>
+            <tab-list-item>Format Data</tab-list-item>
+            <tab-list-item>Pipeline Filters</tab-list-item> 
+            <tab-list-item>Built-in: currency, filter...</tab-list-item> 
+            <tab-list-item>Custom filters </tab-list-item>
+            <tab-list-item>usage: { { expression | filter } }</tab-list-item> 
         </div>
     </div>
     <div  class="step" data-x="0" data-y="18000" data-z="2000" data-scale="1" data-rotate-y="180" >
         <div class="center" >
-            <h1>services</h1>            
+            <h1>Services</h1>  
+            <tab-list-item>Keep data persistently during the app's lifetime</tab-list-item>
+            <tab-list-item>They are singleton objects</tab-list-item>
+            <tab-list-item>Built-in: $http, ...</tab-list-item>
+            <tab-list-item>Custom: factory, service and provider</tab-list-item>
+            *Ari Lerner, Ng-Book - the Complete Book On Angularjs.          
         </div>
     </div> 
-    
+    <div  class="step" data-x="0" data-y="18000" data-z="8000" data-scale="1" data-rotate-y="270" >
+        <div class="center" >
+            <h1>$http</h1> 
+            <tab-list-item>Facilitates communication with the remote HTTP servers</tab-list-item>
+            <tab-list-item>Automatic transformation of requests and responses</tab-list-item>        
+        </div>
+    </div>
      <div  class="step" data-x="0" data-y="18000" data-z="2000" data-scale="1" data-rotate-y="270" >
         <div class="center" >
             <h1>Promises</h1>            
@@ -675,6 +710,16 @@ app.controller('demoController',function($scope,$http){
             $scope.isLoading = false;
           });
   }
+});
+
+app.directive('tabListItem',function(){
+     return {
+        restrict: 'EA',
+        template: '<li style="padding: 0 40px" ng-transclude></li>',
+        replace: true,
+        transclude: true        
+  }
+
 });
 impress().init();
 
