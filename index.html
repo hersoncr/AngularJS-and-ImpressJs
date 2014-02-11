@@ -338,7 +338,7 @@
                 <tab-list-item>Facilitates communication with the remote HTTP servers</tab-list-item>
                 <tab-list-item>Automatic transformation of requests and responses</tab-list-item>
             </div> 
-            <button ng-click="showCode()">{{ toogle }} code</button>
+            <button ng-click="showCode()">{{ toggle }} code</button>
             <div ng-show="codeHolder" style="font-size:26px"> <script src="https://gist.github.com/hersoncr/8923117.js"></script></div>      
         </div>
     </div>
@@ -764,15 +764,15 @@ app.controller('demoController',function($scope,$http){
 });
 app.controller('httpController',function($scope,$http){
     $scope.codeHolder = false;
-    $scope.toogle = "Show";
+    $scope.toggle = "Show";
     $scope.showCode = function(){
         $scope.codeHolder = !$scope.codeHolder;
-        if(!$scope.codeHolder)
+        if($scope.codeHolder)
         {
-            $scope.toogle = "Show";
+            $scope.toggle = "Show";
         }else
         {
-            $scope.toogle = "Hide";
+            $scope.toggle = "Hide";
         }
         
   }
