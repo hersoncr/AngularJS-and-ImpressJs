@@ -208,19 +208,22 @@
             <p>"Single-Page Applications (SPAs) are Web apps that load a single HTML page and dynamically update that page as the user interacts with the app.”</p>            
         </div><blockquote>http://msdn.microsoft.com/en-us/magazine/dn463786.aspx</qoute>
     </div>
-     <div  name="scalabeElement" class="step" data-x="0" data-rotate-y="90" data-y="4500" data-rotate="0" data-scale="1">
+     <div  class="step" data-x="0" data-rotate-y="90" data-y="4500" data-rotate="0" data-scale="1">
         <div class="center">
-            <b class="upscaling" ><h2> General Architecture of SPAs</h2>
+            <b><h2>General Architecture of SPAs</h2>
+            <div>It's all on the Client-side</div>
             <img src="http://singlepageappbook.com/assets/overview.png"/></b>
             <blockquote>http://singlepageappbook.com/assets/overview.png</qoute>
         </div>
     </div>
     
 
-    <div name="scalabeElement" class="step" data-x="0" data-y="6000" data-z="0" data-scale="1">
-        <div class="center" >
+    <div  class="step" data-x="0" data-y="6000" data-z="0" data-scale="1">
+        <div class="center"  ng-controller="httpController">
             <b class="upscaling" ><h1>MVC in AngularJS</h1>
-            <img src="http://docs.angularjs.org/img/tutorial/tutorial_02.png"/></b>
+            <button ng-click="showCode()">{{toggle}} code</button>
+            <div ng-show="codeHolder" style="font-size:16px"><script src="https://gist.github.com/hersoncr/8929573.js"></script></div>
+            <div ng-hide="codeHolder"><img src="http://docs.angularjs.org/img/tutorial/tutorial_02.png"/></b> </div>
             <blockquote>http://docs.angularjs.org/tutorial/step_02</qoute>            
         </div>
     </div>
@@ -236,31 +239,39 @@
         </div>
     </div>
     <div  class="step" data-x="0" data-y="14000" data-z="8000" data-rotate-y="180" data-scale="1" >
-        <div class="center" >
-            <h1>$scope <br/> The <i>glue</i> for the View and Controller</h1>     
-            <img src="glue.png" width="60%" height="60%"/>       
+        <div class="center" ng-controller="httpController">
+            <button ng-click="showCode()">{{toggle}} code</button>
+            <div ng-hide="codeHolder"><h1>$scope <br/> The <i>glue</i> for the View and Controller</h1> 
+            <img src="glue.png" width="60%" height="60%"/></div>
+            <div ng-show="codeHolder" style="font-size:12px"><script src="https://gist.github.com/hersoncr/8930543.js"></script></div>
         </div>
     </div>
     <div  class="step" data-x="0" data-y="14000" data-z="2000"  data-rotate-y="0" data-scale="1">
-        <div class="center" >
+        <div class="center" ng-controller="httpController" >
             <h1><b>Controllers</b></h1>            
-        </div>
-        <div sstyle="font-size:8px"> Augment the Angular Scope<br/>Intended purposes: 
-            <tab-list-item>To setup initial state of a $scope object and</tab-list-item>  
-            <tab-list-item>Extend behavior to a $scope object</tab-list-item>  
-        </div> 
-        <tab-list-item>Controller prototypical inheritance</tab-list-item>  
+            <button ng-click="showCode()">{{toggle}} code</button>
+            <div ng-hide="codeHolder" style="font-size:36px" > Augment the Angular Scope<br/>Intended purposes: 
+                <tab-list-item>To setup initial state of a $scope object and</tab-list-item>  
+                <tab-list-item>Extend behavior to a $scope object</tab-list-item>  
+                <tab-list-item>Controller prototypical inheritance</tab-list-item>
+            </div>
+            <div ng-show="codeHolder" style="font-size:16px"><script src="https://gist.github.com/hersoncr/8930663.js"></script></div>
+        </div>  
     </div>
-    <div class="step"  data-x="0" data-y="14000" data-z="2000"   data-rotate-y="90" data-scale="1">
-        <div class="center" ng-controller="demoController">
-            <h1>Directives: extend HTML!</h1>
-            <input type="text" ng-model="passage" placeholder="Enter Passage" />
-            <input type="text" ng-show="passage" ng-model="search" placeholder="Enter Search criteria" />
-            <div ng-show="verse"> <textarea>{{ verse.split('\n') | filter:search }}</textarea></div>
-
-            <div ng-show="isLoading"><img size="25px" src="http://0-media-cdn.foolz.us/ffuuka/board/gd/image/1389/31/1389311265704.gif"/></div>
-            <input type="button" ng-show="passage" ng-click="showCode(passage)" value="Download and show verse" >  
-
+    <div class="step"  data-x="0" data-y="14000" data-z="-12000"   data-rotate-y="90" data-scale="1" ng-controller="httpController">
+        <div class="center" ng-controller="demoController" >
+            <button ng-click="showCode()">{{toggle}} code</button>
+            <div ng-show="codeHolder" style="font-size:16px"><script src="https://gist.github.com/hersoncr/8931053.js"></script></div>
+            <div ng-hide="codeHolder">
+                <h1>Directives: extend HTML!</h1>
+                <input type="text" ng-model="passage" placeholder="Enter Passage" />
+                <input type="text" ng-show="passage" ng-model="search" placeholder="Enter Search criteria" />
+                <button ng-show="passage" ng-click="showPassage(passage)">Download and show verse</button>
+                <div ng-show="verse" style="font-size:16px"> <tab-list-item ng-repeat='line in (verse.split("\n")| filter:search | limitTo:3 )'>{{line}}</tab-list-item></div>
+    
+                <div ng-show="isLoading"><img size="25px" src="http://0-media-cdn.foolz.us/ffuuka/board/gd/image/1389/31/1389311265704.gif"/></div>
+                  
+            </div>
         </div>
     </div>
     <div class="step"  data-x="0" data-y="14000" data-z="4000"   data-rotate-y="90" data-scale="1">
@@ -271,22 +282,24 @@
                 <tab-list-item>ngModel</tab-list-item>
                 <tab-list-item>ngBind</tab-list-item>
             Custom directives: 
-                <tab-list-item>attribute</tab-list-item>
-                <tab-list-item>elements</tab-list-item>
-                <tab-list-item>comments</tab-list-item>
-                <tab-list-item>classes</tab-list-item>           
+                <div style="font-size:20px"><script src="https://gist.github.com/hersoncr/8931632.js"></script></div>          
         </div>
     </div>
 
     
     <div  class="step" data-x="0" data-y="14000" data-z="2000"  data-rotate-y="270" data-scale="1">
-        <div class="center" > 
-            <h2><strong>Data-Binding</strong></h2>
-            <label>Name:</label>
-            <input type="text" ng-model="yourName" placeholder="Enter a name here">
-            <p ng-show="yourName">Hello, <strong >{{yourName}}</strong>!</p>          
+        <div class="center" ng-controller="httpController"> 
+            <button ng-click="showCode()">{{toggle}} code</button>
+            <div ng-show="codeHolder" style="font-size:36px" > <script src="https://gist.github.com/hersoncr/8931693.js"></script> </div>
+            <div ng-hide="codeHolder">
+                <h2><strong>Data-Binding</strong></h2>
+                <label>Name:</label>
+                <input type="text" ng-model="yourName" placeholder="Enter a name here">
+                <p ng-show="yourName">Hello, <strong >{{yourName}}</strong>!</p>    
+            </div>
         </div>
     </div>
+    
      <div  class="step" data-x="0" data-y="18000" data-z="8000" data-scale="1" data-rotate-y="360" >
         <div class="center" >
             <h1>Expressions</h1>
@@ -730,15 +743,14 @@ var app = angular.module('impressModule', []);
 app.controller('demoController',function($scope,$http){
     $scope.isLoading = false;
 
-    $scope.showCode = function(passage){
+    $scope.showPassage = function(passage){
         $scope.isLoading = true;
 
         $http({method: 'GET', url: "http://api.biblia.com/v1/bible/content/LEB.json?passage="+passage+"&key=fd37d8f28e95d3be8cb4fbc37e15e18e"}).
           success(function(data, status, headers, config) {
             // this callback will be called asynchronously
             // when the response is available
-              
-
+             
             $scope.verse = data.text;
             $scope.isLoading = false;
           }).
