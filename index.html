@@ -322,13 +322,17 @@
         </div>
     </div>
     <div  class="step" data-x="0" data-y="18000" data-z="2000" data-scale="1" data-rotate-y="180" >
-        <div class="center" >
-            <h1>Services</h1>  
-            <tab-list-item>Keep data persistently during the app's lifetime</tab-list-item>
-            <tab-list-item>They are singleton objects</tab-list-item>
-            <tab-list-item>Built-in: $http, $q ...</tab-list-item>
-            <tab-list-item>Custom: factory, service and provider</tab-list-item>
-            *Ari Lerner, Ng-Book - the Complete Book On Angularjs.          
+        <div class="center" ng-controller="httpController">
+            <div ng-hide="codeHolder">
+                <h1>Services</h1>  
+                <tab-list-item>Keep data persistently during the app's lifetime</tab-list-item>
+                <tab-list-item>They are singleton objects</tab-list-item>
+                <tab-list-item>Built-in: $http, $q ...</tab-list-item>
+                <tab-list-item>Custom: factory, service and provider</tab-list-item>
+                *Ari Lerner, Ng-Book - the Complete Book On Angularjs. 
+            </div>
+            <button ng-click="showCode()">{{ toggle }} code</button>
+            <div ng-show="codeHolder" style="font-size:16px"> <script src="https://gist.github.com/hersoncr/8931958.js"></script></div>
         </div>
     </div> 
     <div  class="step" data-x="0" data-y="18000" data-z="8000" data-scale="1" data-rotate-y="270" >
@@ -343,12 +347,17 @@
         </div>
     </div>
      <div  class="step" data-x="0" data-y="18000" data-z="-8000" data-scale="1" data-rotate-y="270" >
-        <div class="center"  >
-            <h1>Promises</h1>
-            <tab-list-item>Resolve values in an asynchronous way</tab-list-item>
-            <tab-list-item>Solves the <i>callback</i> <span style="color:red">Hell</span></tab-list-item>
-            <tab-list-item>Resolve or reject</tab-list-item>
+        <div class="center" ng-controller="httpController">
+            <div ng-hide="codeHolder">
+                <h1>Promises</h1>
+                <tab-list-item>Resolve values in an asynchronous way</tab-list-item>
+                <tab-list-item>Solves the <i>callback</i> <span style="color:red">Hell</span></tab-list-item>
+                <tab-list-item>Resolve or reject</tab-list-item>
+            </div>
+            <button ng-click="showCode()">{{ toggle }} code</button>
+            <div ng-show="codeHolder" style="font-size:16px"> <script src="https://gist.github.com/hersoncr/8932147.js"></script></div>   
         </div>
+        
     </div>
     <div  class="step" data-x="0" data-y="18000" data-z="-16000" data-scale="1" data-rotate-y="270" >
         <div class="center"  >
@@ -767,7 +776,7 @@ app.controller('httpController',function($scope,$http){
     $scope.toggle = "Show";
     $scope.showCode = function(){
         $scope.codeHolder = !$scope.codeHolder;
-        if($scope.codeHolder)
+        if(!$scope.codeHolder)
         {
             $scope.toggle = "Show";
         }else
