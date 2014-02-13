@@ -144,14 +144,16 @@
     </div>
     <div class="step" data-x="0" data-rotate-y="90" data-y="2200" data-z="2000" data-rotate="0" data-scale="1">
         <div class="center">
+            <h1>Extend HTML</h1>
             <p>"It lets you use HTML as your template language and lets you extend HTML's syntax to express your application's components clearly and succinctly."</p>
-            <blockquote>http://docs.angularjs.org/guide/introduction</qoute>
+            <blockquote>[1]</bockqoute>
         </div>
     </div>
     <div class="step" data-x="0" data-rotate-x="90" data-y="2200" data-z="2000" data-rotate="0" data-scale="1">
         <div class="center">
+            <h1>Client-side powered</h1>
             <p>"And it all happens in JavaScript within the browser, making it an ideal partner with any server technology.”</p>
-            <blockquote>http://docs.angularjs.org/guide/introduction</qoute>
+            <blockquote>[1]</blockqoute>
         </div>
     </div>
 
@@ -163,14 +165,13 @@
     <div class="step" data-x="0" data-z="1000"  data-y="4500"  data-rotate="0" data-scale="1">
         <div class="center">
             <p>"Single-Page Applications (SPAs) are Web apps that load a single HTML page and dynamically update that page as the user interacts with the app.”</p>            
-        </div><blockquote>http://msdn.microsoft.com/en-us/magazine/dn463786.aspx</qoute>
+        </div><blockquote>[2]</bockqoute>
     </div>
      <div  class="step" data-x="0" data-rotate-y="90" data-y="4500" data-rotate="0" data-scale="1">
         <div class="center">
-            <b><h2>General Architecture of SPAs</h2>
-            <div>It's all on the Client-side</div>
-            <img src="http://singlepageappbook.com/assets/overview.png"/></b>
-            <blockquote>http://singlepageappbook.com/assets/overview.png</qoute>
+            <h2>General Architecture of SPAs</h2>
+            <img src="http://i.msdn.microsoft.com/dn463786.Wasson_Figure2_hires(en-us,MSDN.10).png"/>
+            [2]
         </div>
     </div>
     
@@ -181,18 +182,22 @@
             <button ng-click="showCode()">{{toggle}} code</button>
             <div ng-show="codeHolder" style="font-size:16px"><script src="https://gist.github.com/hersoncr/8929573.js"></script></div>
             <div ng-hide="codeHolder"><img src="http://docs.angularjs.org/img/tutorial/tutorial_02.png"/></b> </div>
-            <blockquote>http://docs.angularjs.org/tutorial/step_02</qoute>            
+            <blockquote>[3]</qoute>            
         </div>
     </div>
 
 
 <!--  to do -->
      <div  class="step" data-x="0" data-y="14000" data-z="10000" data-scale="1" >
-        <div class="center" >
+        <div class="center" ng-controller="httpController">
+            <button ng-click="showCode()">{{toggle}} code</button>
+            <div ng-hide="codeHolder">
             <h1>Modules</h1> 
-            <tab-list-item>Module API</tab-list-item>
-            <tab-list-item>Run and config blocks</tab-list-item> 
-            <tab-list-item>Asynchronous loading</tab-list-item>          
+                <tab-list-item>Module API</tab-list-item>
+                <tab-list-item>Run and config blocks</tab-list-item> 
+                <tab-list-item>Asynchronous loading</tab-list-item> 
+            </div>
+            <div ng-show="codeHolder" style="font-size:28px"><script src="https://gist.github.com/hersoncr/8969377.js"></script></div>
         </div>
     </div>
     <div  class="step" data-x="0" data-y="14000" data-z="8000" data-rotate-y="180" data-scale="1" >
@@ -265,7 +270,7 @@
             <tab-list-item>Forgiving</tab-list-item><!--: expression evaluation is forgiving to undefined and null, unlike in JavaScript, where trying to evaluate undefined properties can generate ReferenceError or TypeError.-->
 
             <tab-list-item>No Control Flow Statements</tab-list-item> <!--: you cannot do any of the following in angular expression: conditionals, loops, or throw. -->    
-            <br/>*http://docs.angularjs.org/guide/expression.        
+            [4]        
         </div>
     </div>
     <div  class="step" data-x="0" data-y="18000" data-z="2000"  data-rotate-y="90" data-scale="1">
@@ -286,7 +291,7 @@
                 <tab-list-item>They are singleton objects</tab-list-item>
                 <tab-list-item>Built-in: $http, $q ...</tab-list-item>
                 <tab-list-item>Custom: factory, service and provider</tab-list-item>
-                *Ari Lerner, Ng-Book - the Complete Book On Angularjs. 
+                [6] 
             </div>
             <button ng-click="showCode()">{{ toggle }} code</button>
             <div ng-show="codeHolder" style="font-size:16px"> <script src="https://gist.github.com/hersoncr/8931958.js"></script></div>
@@ -324,18 +329,17 @@
             <tab-list-item>Errors can be propagated through</tab-list-item>
             <tab-list-item>Easier to read and understand</tab-list-item>
         </div>
-        *Brad Green and Shyam Seshadri, AngularJS
+        [5]
     </div>
     <div style="font-size:26px" class="step" data-x="0" data-y="0" data-z="-8000" data-scale="1" data-rotate-y="270" >
         <div class="center"  >
             <h1>References</h1>
-            <tab-list-item>http://docs.angularjs.org/guide/introduction</tab-list-item>
-            <tab-list-item>http://msdn.microsoft.com/en-us/magazine/dn463786.aspx</tab-list-item>
-            <tab-list-item>http://singlepageappbook.com/</tab-list-item>
-            <tab-list-item>http://docs.angularjs.org/tutorial/step_02</tab-list-item>
-            <tab-list-item>http://docs.angularjs.org/guide/expression.</tab-list-item>
-            <tab-list-item>Brad Green and Shyam Seshadri, AngularJS. Sebastopol, California, United States of America: O’Reilly Media, Inc., 2013.</tab-list-item>
-            <tab-list-item>Ari Lerner, Ng-Book - the Complete Book On Angularjs. London: Fullstack io, 2013.</tab-list-item>
+            <tab-list-item>[1] http://docs.angularjs.org/guide/introduction</tab-list-item>
+            <tab-list-item>[2] http://msdn.microsoft.com/en-us/magazine/dn463786.aspx</tab-list-item>
+            <tab-list-item>[3] http://docs.angularjs.org/tutorial/step_02</tab-list-item>
+            <tab-list-item>[4] http://docs.angularjs.org/guide/expression.</tab-list-item>
+            <tab-list-item>[5] Brad Green and Shyam Seshadri, AngularJS. Sebastopol, California, United States of America: O’Reilly Media, Inc., 2013.</tab-list-item>
+            <tab-list-item>[6] Ari Lerner, Ng-Book - the Complete Book On Angularjs. London: Fullstack io, 2013.</tab-list-item>
 
 
         </div>
@@ -345,7 +349,7 @@
             <h1 >Conclusion</h1>
         </div>
     </div>
-    <div name="threeD" class="step" data-x="0" data-y="-9000" data-z="-100" data-rotate-x="-40" data-rotate-y="0" data-scale="2">
+    <div name="threeD" class="step" data-x="0" data-y="-9700" data-z="-100" data-rotate-x="-40" data-rotate-y="0" data-scale="2">
         <p><span class="back">So,</span> <span class="front">Are</span> <span class="back">there</span> <span class="back10">any</span> 
             <span class="backfront">Questions?</span>
         </p>
